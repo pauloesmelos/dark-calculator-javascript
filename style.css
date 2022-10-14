@@ -79,12 +79,11 @@
     text-align: center;
     margin-left: auto;/*alinhando centro*/
     margin-right: auto;/*alinhando centro*/
-    margin-top: 5rem;
+    margin-top: 4rem;
  }
 
  .zero {
     width: 6rem;
-    margin-top: 2rem;
  }
 
  .result {
@@ -135,6 +134,7 @@
    border-radius: 5px;
    margin-top: 1rem;
    height: 30rem;
+   padding: 1rem;
 }
 .rodape{
    padding: 1rem;
