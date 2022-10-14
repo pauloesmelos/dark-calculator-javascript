@@ -14,11 +14,13 @@ function calcular(n,operator){
     let op;
 
     result = n[0];
+    //console.log(n);
     for(let i = 0; i < n.length; ++i){
         operator[i] === '+' ? result +=  n[i + 1] : result = result;
-        operator[i] === '-' ? result -= n[i + 1] : result = result;
+        operator[i] === '-' ? result += n[i + 1] : result = result;
         operator[i] === '/' ? result /= n[i + 1] : result = result;
         operator[i] === '*' ? result *= n[i + 1] : result = result;
+        //console.log(n[i]);
     }
     return result;
 }
@@ -32,15 +34,19 @@ btn_result.addEventListener('click', (e) => {
     for(let i = 0; i < expression.value.length; ++i){//255+10=
         if(isNaN(+expression.value[i])){
             operator[j] = expression.value[i];
-            n[j] = +numberclean1;
-            console.log(n[j]);
+            console.log(numberclean1);//13/10/2022 Live Insanity
+            n[j] = +numberclean1.slice(1);
+            //console.log(operator[j]);
             ++j;
             numberclean1 = '';//note que numberclean1 não é um number,portanto resetá-lo com 0 dara erro!!
+           // console.log(numberclean1);
         }
         numberclean1 += expression.value[i];
+        //console.log(numberclean1);
     }
   
     result.value = calcular(n,operator);
+    //console.log(n);
     expression.value = '';
 });
 
